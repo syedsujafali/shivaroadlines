@@ -77,7 +77,7 @@ export function LengthyTankerDetails() {
               Why Choose Shiva Roadlines High-Capacity Tankers?
             </h2>
             <p className="leading-relaxed text-white/95 text-base sm:text-lg">
-              When scale and bottom-line efficiency matter most, our lengthy high-capacity tankers provide the competitive edge. Achieve faster inventory turnaround, fewer transit cycles, and reduced overall shipping overhead with India's trusted bulk logistics partner.
+              When scale and bottom-line efficiency matter most, our lengthy high-capacity tankers provide the competitive edge. Achieve faster inventory turnaround, fewer transit cycles, and reduced overall shipping overhead with India&apos;s trusted bulk logistics partner.
             </p>
           </div>
         </Reveal>

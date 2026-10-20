@@ -77,7 +77,7 @@ export function SSTankerDetails() {
               Why Choose Shiva Roadlines SS Tankers?
             </h2>
             <p className="leading-relaxed text-white/95 text-base sm:text-lg">
-              When dealing with high-value chemicals or purity-critical liquid materials, even microscopic contamination can compromise entire production batches. With Shiva Roadlines' dedicated SS tanker fleet, you benefit from certified metallurgy, disciplined cleaning protocols, and unyielding safety standards.
+              When dealing with high-value chemicals or purity-critical liquid materials, even microscopic contamination can compromise entire production batches. With Shiva Roadlines&apos; dedicated SS tanker fleet, you benefit from certified metallurgy, disciplined cleaning protocols, and unyielding safety standards.
             </p>
           </div>
         </Reveal>
