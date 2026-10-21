@@ -111,14 +111,93 @@ export function GoogleTranslateWidget() {
     });
   };
 
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+
+  const activeLangObj = LANGUAGES.find((l) => l.code === currentLang) || LANGUAGES[0];
+
   return (
-    <div className="flex items-center">
+    <div className="flex items-center relative">
       {/* Hidden container for Google Translate element */}
       <div id="google_translate_element" className="hidden" aria-hidden="true" />
 
-      {/* Sleek Segmented Language Switcher */}
+      {/* MOBILE ONLY: Compact Language Dropdown (<sm) */}
+      <div className="sm:hidden relative">
+        <button
+          type="button"
+          onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+          className="inline-flex items-center gap-1 rounded-full border border-gray-200 bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-[#134063] shadow-xs active:scale-95 transition-all"
+          aria-label="Select language"
+          aria-expanded={mobileDropdownOpen}
+        >
+          <svg
+            className="w-3 h-3 text-[#134063]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+            />
+          </svg>
+          <span>{activeLangObj.label}</span>
+          <svg
+            className={`w-2.5 h-2.5 transition-transform text-gray-500 ${
+              mobileDropdownOpen ? "rotate-180" : ""
+            }`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2.5}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        {mobileDropdownOpen && (
+          <>
+            <div
+              className="fixed inset-0 z-40"
+              onClick={() => setMobileDropdownOpen(false)}
+            />
+            <div className="absolute right-0 top-full mt-1.5 w-28 bg-white rounded-lg shadow-xl border border-gray-100 py-1 z-50 animate-fadeIn">
+              {LANGUAGES.map((lang) => {
+                const isActive = currentLang === lang.code;
+                return (
+                  <button
+                    key={lang.code}
+                    type="button"
+                    onClick={() => {
+                      handleLanguageChange(lang.code);
+                      setMobileDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-3 py-1.5 text-xs font-semibold flex items-center justify-between transition-colors ${
+                      isActive
+                        ? "bg-[#134063]/10 text-[#134063]"
+                        : "text-gray-700 hover:bg-gray-50"
+                    }`}
+                  >
+                    <span>{lang.name}</span>
+                    <span className="text-[10px] text-gray-400 uppercase font-mono">
+                      {lang.code}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* DESKTOP & TABLET: Sleek Segmented Switcher (>=sm) */}
       <div
-        className="inline-flex items-center rounded-full border border-gray-200 bg-white/95 p-0.5 shadow-xs backdrop-blur-xs max-w-full"
+        className="hidden sm:inline-flex items-center rounded-full border border-gray-200 bg-white/95 p-0.5 shadow-xs backdrop-blur-xs max-w-full"
         role="group"
         aria-label="Language selection"
       >
@@ -129,7 +208,7 @@ export function GoogleTranslateWidget() {
               key={lang.code}
               type="button"
               onClick={() => handleLanguageChange(lang.code)}
-              className={`rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold transition-all duration-150 leading-none ${
+              className={`rounded-full px-2 sm:px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold transition-all duration-150 leading-none ${
                 isActive
                   ? "bg-[#134063] text-white shadow-xs"
                   : "text-gray-600 hover:text-[#0A1B33] hover:bg-gray-100/80"

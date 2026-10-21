@@ -39,7 +39,7 @@ export function Footer() {
             <div className="lg:col-span-5">
               <Link href="/" className="mb-4 inline-block">
                 <Image
-                  src="/images/logo.webp"
+                  src="/images/logonew.webp"
                   alt="Shiva Roadlines Logo"
                   width={260}
                   height={70}

@@ -83,10 +83,10 @@ export function Header() {
             "linear-gradient(135deg, #0A1B33 0%, #134063 50%, #F4B742 100%)",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-1.5 sm:py-2">
+          <div className="flex items-center justify-between gap-2">
             {/* Social Icons */}
-            <div className="flex items-center space-x-3 sm:space-x-4">
+            <div className="flex items-center space-x-1.5 sm:space-x-4 shrink-0">
               <a
                 href="https://x.com/shiva_roadlines"
                 target="_blank"
@@ -94,7 +94,7 @@ export function Header() {
                 className="text-white hover:text-[#F4B742] transition-colors p-1"
                 aria-label="Twitter/X"
               >
-                <XTwitterIcon className="w-4 h-4" />
+                <XTwitterIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61583817492894"
@@ -103,7 +103,7 @@ export function Header() {
                 className="text-white hover:text-[#F4B742] transition-colors p-1"
                 aria-label="Facebook"
               >
-                <FacebookIcon className="w-4 h-4" />
+                <FacebookIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
               <a
                 href="https://wa.me/919029999979"
@@ -112,7 +112,7 @@ export function Header() {
                 className="text-white hover:text-[#F4B742] transition-colors p-1"
                 aria-label="WhatsApp"
               >
-                <WhatsAppIcon className="w-4 h-4" />
+                <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
               <a
                 href="https://www.instagram.com/shiva.roadlines_/"
@@ -121,18 +121,18 @@ export function Header() {
                 className="text-white hover:text-[#F4B742] transition-colors p-1"
                 aria-label="Instagram"
               >
-                <InstagramIcon className="w-4 h-4" />
+                <InstagramIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
             </div>
 
             {/* Contact details */}
-            <div className="flex items-center space-x-4 sm:space-x-6">
+            <div className="flex items-center space-x-3 sm:space-x-6 shrink-0">
               <a
                 href="tel:9029999979"
                 className="flex items-center text-white hoverredcol group"
               >
-                <PhoneIcon className="w-4 h-4 mr-1 sm:mr-2 text-white" />
-                <span className="font-semibold text-xs sm:text-sm">
+                <PhoneIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-white shrink-0" />
+                <span className="font-semibold text-[11px] sm:text-sm">
                   9029999979
                 </span>
               </a>
@@ -140,7 +140,7 @@ export function Header() {
                 href="mailto:shivaroadlines2@gmail.com"
                 className="hidden md:flex items-center text-white hoverredcol group"
               >
-                <EnvelopeIcon className="w-4 h-4 mr-2 text-white" />
+                <EnvelopeIcon className="w-4 h-4 mr-2 text-white shrink-0" />
                 <span className="font-semibold text-xs sm:text-sm">
                   shivaroadlines2@gmail.com
                 </span>
@@ -155,20 +155,37 @@ export function Header() {
         className={`site-navbar w-full bg-white border-b border-gray-100 ${isSticky ? "sticky-header shadow-md" : ""
           }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20 md:h-24 gap-2">
-            {/* Logo */}
-            <div className="shrink-0 min-w-0">
-              <Link href="/" className="inline-block max-w-full">
+        <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-15 sm:h-20 md:h-24 gap-1.5 sm:gap-2">
+            {/* Logo & Brand Name */}
+            <div className="shrink min-w-0 flex items-center">
+              <Link href="/" className="inline-flex items-center gap-1 sm:gap-2 md:gap-2.5 group py-1 max-w-full">
                 <Image
-                  src="/images/logo.webp"
-                  alt="Shiva Road Lines Logo"
-                  width={260}
-                  height={72}
+                  src="/images/shiva_emblem.webp"
+                  alt="Lord Shiva Emblem"
+                  width={200}
+                  height={135}
                   priority
-                  style={{ width: "auto", height: "auto" }}
-                  className="h-11 sm:h-13 md:h-14 lg:h-16 w-auto max-w-45 xs:max-w-[210px] sm:max-w-60 md:max-w-65 lg:max-w-67.5 object-contain transition-all duration-300"
+                  style={{ width: "auto" }}
+                  className="h-11 xs:h-13 sm:h-16 md:h-18 lg:h-21 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="flex flex-col items-center justify-center leading-none select-none shrink min-w-0 -ml-0.5 sm:-ml-1">
+                  <Image
+                    src="/images/shiva_roadlines_text.webp"
+                    alt="SHIVA ROADLINES"
+                    width={280}
+                    height={104}
+                    priority
+                    style={{ width: "auto" }}
+                    className="h-7.5 xs:h-9 sm:h-11 md:h-12 lg:h-14 w-auto max-w-[145px] xs:max-w-[185px] sm:max-w-none object-contain"
+                  />
+                  <span
+                    className="text-[#0A1B33] font-bold text-[9.5px] xs:text-[11px] sm:text-[12.5px] md:text-[14px] lg:text-[15px] mt-2 xs:mt-2.5 sm:mt-2.5 md:mt-3 tracking-tight xs:tracking-normal sm:tracking-wide whitespace-nowrap"
+                    style={{ lineHeight: "1" }}
+                  >
+                    श्री शिवाय नमस्तुभ्यम्
+                  </span>
+                </div>
               </Link>
             </div>
 
@@ -367,17 +384,37 @@ export function Header() {
                   </motion.button>
                 </div>
 
-                {/* Logo */}
+                {/* Logo & Brand Name */}
                 <div className="py-6 text-center">
-                  <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                  <Link
+                    href="/"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2"
+                  >
                     <Image
-                      src="/images/logo2.webp"
-                      alt="Shiva Roadlines Logo"
-                      width={200}
-                      height={55}
-                      style={{ width: "auto", height: "auto" }}
-                      className="mx-auto h-12 w-auto max-w-50 object-contain"
+                      src="/images/shiva_emblem.webp"
+                      alt="Lord Shiva Emblem"
+                      width={140}
+                      height={95}
+                      style={{ width: "auto" }}
+                      className="h-14 w-auto object-contain"
                     />
+                    <div className="flex flex-col items-center justify-center leading-none select-none -ml-0.5">
+                      <Image
+                        src="/images/shiva_roadlines_text.webp"
+                        alt="SHIVA ROADLINES"
+                        width={200}
+                        height={75}
+                        style={{ width: "auto" }}
+                        className="h-9 w-auto object-contain"
+                      />
+                      <span
+                        className="text-[#0A1B33] font-bold text-[12px] mt-2.5 tracking-wide"
+                        style={{ lineHeight: "1" }}
+                      >
+                        श्री शिवाय नमस्तुभ्यम्
+                      </span>
+                    </div>
                   </Link>
                 </div>
 
