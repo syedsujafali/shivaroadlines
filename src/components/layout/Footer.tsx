@@ -37,15 +37,34 @@ export function Footer() {
 
             {/* Logo + About */}
             <div className="lg:col-span-5">
-              <Link href="/" className="mb-4 inline-block">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-1 sm:gap-2 md:gap-2.5 group py-1 max-w-full mb-4"
+              >
                 <Image
-                  src="/images/logonew.webp"
-                  alt="Shiva Roadlines Logo"
-                  width={260}
-                  height={70}
-                  style={{ width: "auto", height: "auto" }}
-                  className="h-auto max-h-20 w-auto object-contain"
+                  src="/images/shiva_emblem.webp"
+                  alt="Lord Shiva Emblem"
+                  width={200}
+                  height={135}
+                  style={{ width: "auto" }}
+                  className="h-11 xs:h-13 sm:h-16 md:h-18 lg:h-21 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="flex flex-col items-center justify-center leading-none select-none shrink min-w-0 -ml-0.5 sm:-ml-1">
+                  <Image
+                    src="/images/shiva_roadlines_text.webp"
+                    alt="SHIVA ROADLINES"
+                    width={280}
+                    height={104}
+                    style={{ width: "auto" }}
+                    className="h-7.5 xs:h-9 sm:h-11 md:h-12 lg:h-14 w-auto max-w-[145px] xs:max-w-[185px] sm:max-w-none object-contain"
+                  />
+                  <span
+                    className="text-[#0A1B33] font-bold text-[9.5px] xs:text-[11px] sm:text-[12.5px] md:text-[14px] lg:text-[15px] mt-2 xs:mt-2.5 sm:mt-2.5 md:mt-3 tracking-tight xs:tracking-normal sm:tracking-wide whitespace-nowrap"
+                    style={{ lineHeight: "1" }}
+                  >
+                    श्री शिवाय नमस्तुभ्यम्
+                  </span>
+                </div>
               </Link>
 
               <p className="text-justify pr-0 text-sm leading-relaxed text-gray-600 lg:pr-6">
